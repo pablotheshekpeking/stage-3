@@ -10,11 +10,11 @@ import {
 import Link from "next/link";
 const Navbar = () => {
     return ( 
-        <Stack direction={'row'}>
-            <Box className="Heading" w={'50%'}>
+        <Stack direction={'row'} bg={'blue.400'}>
+            <Box className="Heading" w={'75%'}>
             <Link href={'../'}><Text>Drag & Drop Image Gallery</Text></Link>
             </Box>
-            <Box w={'50%'}>
+            <Box w={'25%'}>
                 <Link href={'../signin'}><Button>Sign In</Button></Link>
             </Box>
         </Stack>
