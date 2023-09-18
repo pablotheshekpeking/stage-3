@@ -4,6 +4,7 @@ import { Stack, Box, Text, Input, InputGroup, InputRightElement, Button } from "
 import Form from "../../components/form";
 import Link from "next/link";
 import React from 'react';
+import { ProvidersA } from "./providera";
 
 
 const Signin = () => {
@@ -13,7 +14,7 @@ const Signin = () => {
                 <Link href={'../'}><Text textAlign={'center'} color={'black'}>Drag & Drop Images</Text></Link>
             </Stack>
 
-            
+            <ProvidersA />
         </div>
 
     );
