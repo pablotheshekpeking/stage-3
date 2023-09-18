@@ -1,7 +1,7 @@
 'use client';
 
 import Form from '@/app/components/form';
-import { Stack, Box } from '@chakra-ui/react';
+import { Stack, Box, Text } from '@chakra-ui/react';
 import Link from "next/link";
 import { CacheProvider } from '@chakra-ui/next-js';
 import { ChakraProvider } from '@chakra-ui/react';
