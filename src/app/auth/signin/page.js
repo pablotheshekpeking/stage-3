@@ -14,10 +14,10 @@ const Signin = () => {
             </Stack>
 
             <Stack direction={'row'} className="body" w={'100%'}>
-                <Box className="form" w={['100%', '100%', '50%', '50%']} m={'auto'}>
+                <Box className="form" w={['100%', '100%', '50%', '50%']} m={'auto'} pr={[]}>
                     <Form />
                 </Box>
-                <Box className="css" w={['0%', '0%', '50%', '50%']} display={['none', 'none', 'inline', 'inline']}></Box>
+                <Box className="css" w={['0%', '0%', '50%', '50%']} display={['none', 'none', 'block', 'block']}></Box>
             </Stack>
         </>
 
