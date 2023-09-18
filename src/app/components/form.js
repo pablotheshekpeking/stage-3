@@ -13,7 +13,7 @@ import {
   Image,
 } from '@chakra-ui/react'
 
-export default function SplitScreen() {
+export default function Form() {
   return (
     <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
       <Flex p={8} flex={1} align={'center'} justify={'center'}>
