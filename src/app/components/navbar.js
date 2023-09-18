@@ -4,18 +4,18 @@ import React from "react";
 import {
     Stack,
     Box,
-    Text
+    Text,
+    Button
 } from '@chakra-ui/react'
 import Link from "next/link";
 const Navbar = () => {
     return ( 
         <Stack direction={'row'}>
-            <Box className="Heading">
-                <Text>Drag & Drop Image Gallery</Text>
+            <Box className="Heading" w={'50%'}>
+            <Link href={'../'}><Text>Drag & Drop Image Gallery</Text></Link>
             </Box>
-            <Box>
-                <Text>Sign In</Text>
-                <Link href={'../signin'}></Link><Text>Sign Up</Text>
+            <Box w={'50%'}>
+                <Link href={'../signin'}><Button>Sign In</Button></Link>
             </Box>
         </Stack>
      );
