@@ -18,7 +18,6 @@ import React from 'react';
 export default function Form() {
   return (
     <Flex
-      h={'100vh'}
       align={'center'}
       justify={'center'}
       bg={useColorModeValue('gray.50', 'gray.800')}>
