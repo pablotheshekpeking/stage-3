@@ -13,11 +13,11 @@ const Signin = () => {
                 <Link href={'../'}><Text textAlign={'center'} color={'black'}>Drag & Drop Images</Text></Link>
             </Stack>
 
-            <Stack direction={'row'} className="body" w={'100%'}>
+            <Stack direction={['column', 'column', 'row', 'row']} className="body" w={'100%'}>
                 <Box className="form" w={['100%', '100%', '50%', '50%']} m={'auto'} pr={[]}>
                     <Form />
                 </Box>
-                <Box className="css" w={['0%', '0%', '50%', '50%']} display={['none', 'none', 'block', 'block']}></Box>
+                <Box className="css" display={['none', 'none', 'block', 'block']} w={['0px', '0px', '50%', '50%']}></Box>
             </Stack>
         </>
 

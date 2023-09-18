@@ -23,14 +23,14 @@ export default function Form() {
       bg={useColorModeValue('gray.50', 'gray.800')}>
       <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
         <Stack align={'center'}>
-          <Heading fontSize={['', '', '4xl', '4xl']} textAlign={'center'}>Sign in to your account</Heading>
+          <Heading fontSize={['', '', '4xl', '4xl']}>Sign in to your account</Heading>
         </Stack>
         <Box
           rounded={'lg'}
           bg={useColorModeValue('white', 'gray.700')}
           boxShadow={'lg'}
           p={8}>
-          <Stack spacing={4} m={'auto'} align={'center'}>
+          <Stack spacing={4}>
             <FormControl id="email">
               <FormLabel>Email address</FormLabel>
               <Input type="email" w={'100%'} h={'20px'} />
