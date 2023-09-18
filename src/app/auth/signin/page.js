@@ -10,7 +10,7 @@ const Signin = () => {
     return (
         <>
             <Stack bg={'blue.400'} p={'20px'} w={'100%'}>
-                <Link href={'../'}><Text textAlign={'center'} color={'white'}>Drag & Drop Images</Text></Link>
+                <Link href={'../'}><Text textAlign={'center'} color={'black'}>Drag & Drop Images</Text></Link>
             </Stack>
 
             <Stack direction={'row'} className="body" w={'100%'}>
