@@ -12,7 +12,8 @@ import {
   Heading,
   Text,
   useColorModeValue,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
+import React from 'react';
 
 export default function Form() {
   return (
@@ -51,7 +52,6 @@ export default function Form() {
                 p={'10px'}
                 w={'100%'}
                 color={'black'}
-                bg
                 _hover={{
                   bg: 'blue.500',
                 }}>

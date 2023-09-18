@@ -1,6 +1,7 @@
 'use client'
 
 import { Stack, Box, Text, Input, InputGroup, InputRightElement, Button } from "@chakra-ui/react";
+import React from 'react';
 import Navbar from "../components/navbar";
 import Form from "../components/form";
 
