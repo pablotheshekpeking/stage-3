@@ -1,7 +1,7 @@
 'use client'
 
 import { Stack, Box, Text, Input, InputGroup, InputRightElement, Button } from "@chakra-ui/react";
-import Form from "../components/form";
+import Form from "../../components/form";
 import Link from "next/link";
 import React from 'react';
 
