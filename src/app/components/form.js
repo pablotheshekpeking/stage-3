@@ -18,6 +18,7 @@ import React from 'react';
 export default function Form() {
   return (
     <Flex
+      minH={'100vh'}
       align={'center'}
       justify={'center'}
       bg={useColorModeValue('gray.50', 'gray.800')}>
@@ -33,11 +34,11 @@ export default function Form() {
           <Stack spacing={4}>
             <FormControl id="email">
               <FormLabel>Email address</FormLabel>
-              <Input type="email" w={'100%'} h={'20px'} />
+              <Input type="email" w={'100%'} />
             </FormControl>
             <FormControl id="password">
               <FormLabel>Password</FormLabel>
-              <Input type="password" w={'100%'} h={'20px'} />
+              <Input type="password" w={'100%'} />
             </FormControl>
             <Stack spacing={10}>
               <Stack

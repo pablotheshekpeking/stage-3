@@ -10,9 +10,6 @@ import { ProvidersA } from "./providera";
 const Signin = () => {
     return (
         <div>
-            <Stack bg={'blue.400'} p={'20px'} w={'100%'}>
-                <Link href={'../'}><Text textAlign={'center'} color={'black'}>Drag & Drop Images</Text></Link>
-            </Stack>
 
             <ProvidersA />
         </div>
