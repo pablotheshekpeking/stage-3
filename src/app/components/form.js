@@ -1,55 +1,66 @@
 'use client'
 
 import {
-  Button,
-  Checkbox,
   Flex,
-  Text,
+  Box,
   FormControl,
   FormLabel,
-  Heading,
   Input,
+  Checkbox,
   Stack,
-  Image,
-} from '@chakra-ui/react'
+  Button,
+  Heading,
+  Text,
+  useColorModeValue,
+} from '@chakra-ui/react';
+import React from 'react';
 
 export default function Form() {
   return (
-    <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
-      <Flex p={8} flex={1} align={'center'} justify={'center'}>
-        <Stack spacing={4} w={'full'} maxW={'md'}>
-          <Heading fontSize={'2xl'}>Sign in to your account</Heading>
-          <FormControl id="email">
-            <FormLabel>Email address</FormLabel>
-            <Input type="email" />
-          </FormControl>
-          <FormControl id="password">
-            <FormLabel>Password</FormLabel>
-            <Input type="password" />
-          </FormControl>
-          <Stack spacing={6}>
-            <Stack
-              direction={{ base: 'column', sm: 'row' }}
-              align={'start'}
-              justify={'space-between'}>
-              <Checkbox>Remember me</Checkbox>
-              <Text color={'blue.500'}>Forgot password?</Text>
-            </Stack>
-            <Button colorScheme={'blue'} variant={'solid'}>
-              Sign in
-            </Button>
-          </Stack>
+    <Flex
+      align={'center'}
+      justify={'center'}
+      bg={useColorModeValue('gray.50', 'gray.800')}>
+      <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
+        <Stack align={'center'}>
+          <Heading fontSize={['', '', '4xl', '4xl']} textAlign={'center'}>Sign in to your account</Heading>
         </Stack>
-      </Flex>
-      <Flex flex={1}>
-        <Image
-          alt={'Login Image'}
-          objectFit={'cover'}
-          src={
-            'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80'
-          }
-        />
-      </Flex>
-    </Stack>
+        <Box
+          rounded={'lg'}
+          bg={useColorModeValue('white', 'gray.700')}
+          boxShadow={'lg'}
+          p={8}>
+          <Stack spacing={4} m={'auto'} align={'center'}>
+            <FormControl id="email">
+              <FormLabel>Email address</FormLabel>
+              <Input type="email" w={'100%'} h={'20px'} />
+            </FormControl>
+            <FormControl id="password">
+              <FormLabel>Password</FormLabel>
+              <Input type="password" w={'100%'} h={'20px'} />
+            </FormControl>
+            <Stack spacing={10}>
+              <Stack
+                direction={{ base: 'column', sm: 'row' }}
+                align={'start'}
+                justify={'space-between'}>
+                <Checkbox>Remember me</Checkbox>
+                {/**<Text color={'blue.400'}>Forgot password?</Text>*/}
+              </Stack>
+              <Button
+                bg={'blue.400'}
+                p={'10px'}
+                w={'100%'}
+                color={'black'}
+                _hover={{
+                  bg: 'blue.500',
+                }}>
+                Sign in
+              </Button>
+            </Stack>
+          </Stack>
+        </Box>
+      </Stack>
+    </Flex>
   )
 }
