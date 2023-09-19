@@ -14,7 +14,7 @@ export function Providers({ children }) {
     <CacheProvider>
       <ChakraProvider>
         <Navbar />
-        <Stack direction={'row'}>
+        <Stack direction={'row'} p={'20px'}>
           <Box w={'25%'}><No1 /></Box>
           <Box w={'25%'}><No2 /></Box>
           <Box w={'25%'}><No3 /></Box>
