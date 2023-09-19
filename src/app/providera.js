@@ -22,7 +22,7 @@ export function ProvidersA({ children }) {
           <Box className="form" w={['100%', '100%', '50%', '50%']} m={'auto'} pr={[]}>
             <Form />
           </Box>
-          <Box className={styles.page} display={['none', 'none', 'block', 'block']} w={['0px', '0px', '50%', '50%']} minH={'100vh'}></Box>
+          <Box className={styles.css} display={['none', 'none', 'block', 'block']} w={['0px', '0px', '50%', '50%']} minH={'100vh'}></Box>
         </Stack>
       </ChakraProvider>
     </CacheProvider>
