@@ -24,7 +24,7 @@ export default function Form() {
   const handleSignIn = async () => {
     try {
       const user = await signInWithEmailAndPasswordHandler(email, password);
-      <Link href={'../gallery'}></Link>
+      
       console.log('Signed in successfully:', user);
     } catch (error) {
       setError(error.message);
@@ -73,6 +73,7 @@ export default function Form() {
                 <Checkbox>Remember me</Checkbox>
                 {/* ... */}
               </Stack>
+              <Link href={'../gallery'}>
               <Button
                 onClick={handleSignIn} // Call the handleSignIn function when the button is clicked
                 bg={'blue.400'}
@@ -84,6 +85,7 @@ export default function Form() {
                 }}>
                 Sign in
               </Button>
+              </Link>
             </Stack>
           </Stack>
         </Box>
