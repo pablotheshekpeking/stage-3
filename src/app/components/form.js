@@ -1,5 +1,6 @@
 'use client'
 
+import React, { useState } from 'react';
 import {
   Flex,
   Box,
@@ -13,10 +14,23 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import Link from 'next/link';
-import React from 'react';
+import firebase from 'firebase/app'; // Import Firebase
+import 'firebase/auth'; // Import Firebase authentication module
 
 export default function Form() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);
+
+  const handleSignIn = async () => {
+    try {
+      await firebase.auth().signInWithEmailAndPassword(email, password);
+      // You are now signed in. You can redirect to another page or update UI accordingly.
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
   return (
     <Flex
       minH={'100vh'}
@@ -35,12 +49,23 @@ export default function Form() {
           <Stack spacing={4}>
             <FormControl id="email">
               <FormLabel>Email address</FormLabel>
-              <Input type="email" w={'100%'} />
+              <Input
+                type="email"
+                w={'100%'}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </FormControl>
             <FormControl id="password">
               <FormLabel>Password</FormLabel>
-              <Input type="password" w={'100%'} />
+              <Input
+                type="password"
+                w={'100%'}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </FormControl>
+            {error && <Text color="red">{error}</Text>}
             <Stack spacing={10}>
               <Stack
                 direction={{ base: 'column', sm: 'row' }}
@@ -49,20 +74,21 @@ export default function Form() {
                 <Checkbox>Remember me</Checkbox>
                 {/**<Text color={'blue.400'}>Forgot password?</Text>*/}
               </Stack>
-              <Link href={'../gallery'}><Button
+              <Button
                 bg={'blue.400'}
                 p={'10px'}
                 w={'100%'}
                 color={'black'}
+                onClick={handleSignIn}
                 _hover={{
                   bg: 'blue.500',
                 }}>
                 Sign in
-              </Button></Link>
+              </Button>
             </Stack>
           </Stack>
         </Box>
       </Stack>
     </Flex>
-  )
+  );
 }
