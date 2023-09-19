@@ -7,6 +7,7 @@ import {
     Text,
     Button
 } from '@chakra-ui/react'
+import Link from "next/link";
 const Navbar = () => {
     return ( 
         <Stack direction={'row'} bg={'blue.400'} p={'20px'}>
