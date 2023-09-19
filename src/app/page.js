@@ -1,13 +1,17 @@
 'use client'
 
-import Image from 'next/image'
-import styles from './page.module.css'
-import { Providers } from './provider'
+import React from 'react';
+import { ProvidersA } from "./providera";
 
-export default function Home() {
-  return (
-    <div>
-      <Providers />
-    </div>
-  )
+
+const Signin = () => {
+    return (
+        <div>
+
+            <ProvidersA />
+        </div>
+
+    );
 }
+
+export default Signin;

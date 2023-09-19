@@ -2,8 +2,8 @@
 
 import { CacheProvider } from '@chakra-ui/next-js';
 import { ChakraProvider } from '@chakra-ui/react';
-import Navbar from './components/navbar';
-import No1 from './components/img1';
+import Navbar from '../components/navbar';
+import No1 from '../components/img1';
 
 export function Providers({ children }) {
   return (

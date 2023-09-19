@@ -13,7 +13,7 @@ export function ProvidersA({ children }) {
 
         {/** header */}
         <Stack bg={'blue.400'} p={'20px'} w={'100%'}>
-          <Link href={'../'}><Text textAlign={'center'} color={'white'}>Drag & Drop Images</Text></Link>
+          <Link href={'../'}><Text textAlign={'center'} color={'white'}>Drag & Drop Image Gallery</Text></Link>
         </Stack>
 
         {/** form */}

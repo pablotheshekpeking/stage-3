@@ -13,6 +13,7 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
+import Link from 'next/link';
 import React from 'react';
 
 export default function Form() {
@@ -48,7 +49,7 @@ export default function Form() {
                 <Checkbox>Remember me</Checkbox>
                 {/**<Text color={'blue.400'}>Forgot password?</Text>*/}
               </Stack>
-              <Button
+              <Link href={'../gallery'}><Button
                 bg={'blue.400'}
                 p={'10px'}
                 w={'100%'}
@@ -57,7 +58,7 @@ export default function Form() {
                   bg: 'blue.500',
                 }}>
                 Sign in
-              </Button>
+              </Button></Link>
             </Stack>
           </Stack>
         </Box>
