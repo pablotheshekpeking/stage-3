@@ -1,6 +1,5 @@
 'use client'
 
-import React, { useState } from 'react';
 import {
   Flex,
   Box,
@@ -11,11 +10,11 @@ import {
   Stack,
   Button,
   Heading,
-  Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import firebase from 'firebase/app'; // Import Firebase
-import 'firebase/auth'; // Import Firebase authentication module
+import Link from 'next/link';
+import React, { useState } from 'react';
+import { signInWithEmailAndPasswordHandler } from './firebaseAuth'; // Import the Firebase authentication function
 
 export default function Form() {
   const [email, setEmail] = useState('');
@@ -24,8 +23,9 @@ export default function Form() {
 
   const handleSignIn = async () => {
     try {
-      await firebase.auth().signInWithEmailAndPassword(email, password);
-      // You are now signed in. You can redirect to another page or update UI accordingly.
+      const user = await signInWithEmailAndPasswordHandler(email, password);
+      <Link href={'../gallery'}></Link>
+      console.log('Signed in successfully:', user);
     } catch (error) {
       setError(error.message);
     }
@@ -65,21 +65,20 @@ export default function Form() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </FormControl>
-            {error && <Text color="red">{error}</Text>}
             <Stack spacing={10}>
               <Stack
                 direction={{ base: 'column', sm: 'row' }}
                 align={'start'}
                 justify={'space-between'}>
                 <Checkbox>Remember me</Checkbox>
-                {/**<Text color={'blue.400'}>Forgot password?</Text>*/}
+                {/* ... */}
               </Stack>
               <Button
+                onClick={handleSignIn} // Call the handleSignIn function when the button is clicked
                 bg={'blue.400'}
                 p={'10px'}
                 w={'100%'}
                 color={'black'}
-                onClick={handleSignIn}
                 _hover={{
                   bg: 'blue.500',
                 }}>
@@ -88,6 +87,11 @@ export default function Form() {
             </Stack>
           </Stack>
         </Box>
+        {error && (
+          <Text color="red.500" fontSize="sm">
+            {error}
+          </Text>
+        )}
       </Stack>
     </Flex>
   );
