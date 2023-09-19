@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Box, Img } from '@chakra-ui/react';
 import GridLayout from 'react-grid-layout';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
-import HTML5Backend from 'react-dnd-html5-backend';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 
 const No1 = () => {
   const [layout, setLayout] = useState([
