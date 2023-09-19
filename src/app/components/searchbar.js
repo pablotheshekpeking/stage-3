@@ -13,7 +13,7 @@ const SearchBar = ({ onSearch }) => {
     return (
         <div>
             <Stack direction={'row'} m={'auto'} p={'20px'}>
-                <Box w={'80%'}>
+                <Box w={['80%', '80%', '90%', '90%']}>
                     <Input
                         type="text"
                         placeholder="Search by ID"
@@ -21,7 +21,7 @@ const SearchBar = ({ onSearch }) => {
                         onChange={(e) => setSearchQuery(e.target.value)}
                     />
                 </Box>
-                <Box w={'20%'}>
+                <Box w={['20%', '20%', '10%', '10%']}>
                     <Button onClick={handleSearch}>Search</Button>
                 </Box>
             </Stack>
