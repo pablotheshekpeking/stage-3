@@ -1,7 +1,7 @@
 // SearchBar.js
 'use client'
 import React, { useState } from 'react';
-import { Input, Button } from '@chakra-ui/react';
+import { Input, Button, Stack, Box } from '@chakra-ui/react';
 
 const SearchBar = ({ onSearch }) => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -12,13 +12,19 @@ const SearchBar = ({ onSearch }) => {
 
     return (
         <div>
-            <Input
-                type="text"
-                placeholder="Search by ID"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-            />
-            <Button onClick={handleSearch}>Search</Button>
+            <Stack direction={'row'}>
+                <Box w={'80%'}>
+                    <Input
+                        type="text"
+                        placeholder="Search by ID"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                </Box>
+                <Box w={'20%'}>
+                    <Button onClick={handleSearch}>Search</Button>
+                </Box>
+            </Stack>
         </div>
     );
 };
