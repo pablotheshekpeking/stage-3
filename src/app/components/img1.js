@@ -29,12 +29,45 @@ const No1 = () => {
         layout={layout}
         cols={4}
         rowHeight={200} // Adjust the height as needed
-        width={'50%'}
+        width={'25%'}
         onLayoutChange={onLayoutChange}
       >
         <GalleryItem key="a" id="a" src="/assets/img1.png" />
+        {/* Add more images as needed */}
+      </GridLayout>
+
+      <GridLayout
+        className="layout"
+        layout={layout}
+        cols={4}
+        rowHeight={200} // Adjust the height as needed
+        width={'25%'}
+        onLayoutChange={onLayoutChange}
+      >
         <GalleryItem key="b" id="b" src="/assets/img2.png" />
+        {/* Add more images as needed */}
+      </GridLayout>
+
+      <GridLayout
+        className="layout"
+        layout={layout}
+        cols={4}
+        rowHeight={200} // Adjust the height as needed
+        width={'25%'}
+        onLayoutChange={onLayoutChange}
+      >
         <GalleryItem key="c" id="c" src="/assets/img3.png" />
+        {/* Add more images as needed */}
+      </GridLayout>
+
+      <GridLayout
+        className="layout"
+        layout={layout}
+        cols={4}
+        rowHeight={200} // Adjust the height as needed
+        width={'25%'}
+        onLayoutChange={onLayoutChange}
+      >
         <GalleryItem key="d" id="d" src="/assets/img4.png" />
         {/* Add more images as needed */}
       </GridLayout>
