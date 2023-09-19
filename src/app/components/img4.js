@@ -61,7 +61,7 @@ const GalleryItem = ({ id, src }) => {
     return (
         <div ref={(node) => ref(drop(node))} style={{ opacity }}>
                 <Box w="100%" h="auto">
-                    <Img src={src} w="100%" h="auto" />
+                    <Img src={src} w="100%" h="auto" p={'10px'} />
                 </Box>
         </div>
     );
