@@ -14,6 +14,7 @@ import {
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { signInWithEmailAndPasswordHandler } from '../firebaseAuth'; // Import the Firebase authentication function
 
 export default function Form() {
@@ -26,6 +27,7 @@ export default function Form() {
       const user = await signInWithEmailAndPasswordHandler(email, password);
       
       console.log('Signed in successfully:', user);
+      router.push('../gallery');
     } catch (error) {
       setError(error.message);
     }
@@ -73,7 +75,6 @@ export default function Form() {
                 <Checkbox>Remember me</Checkbox>
                 {/* ... */}
               </Stack>
-              <Link href={'../gallery'}>
               <Button
                 onClick={handleSignIn} // Call the handleSignIn function when the button is clicked
                 bg={'blue.400'}
@@ -85,13 +86,13 @@ export default function Form() {
                 }}>
                 Sign in
               </Button>
-              </Link>
             </Stack>
           </Stack>
         </Box>
         {error && (
           <Text color="red.500" fontSize="sm">
             {error}
+            Incorrect Credentials
           </Text>
         )}
       </Stack>
