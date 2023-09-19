@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { signInWithEmailAndPasswordHandler } from './firebaseAuth'; // Import the Firebase authentication function
+import { signInWithEmailAndPasswordHandler } from '../firebaseAuth'; // Import the Firebase authentication function
 
 export default function Form() {
   const [email, setEmail] = useState('');
