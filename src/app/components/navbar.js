@@ -15,7 +15,7 @@ const Navbar = () => {
             <Link href={'../'}><Text textAlign={'center'} color={'white'} m={'auto'}>Drag & Drop Image Gallery</Text></Link>
             </Box>
             <Box w={'25%'}>
-                <Link href={'../auth/signin'}><Button>Sign In</Button></Link>
+                <Link href={'../'}><Button>Logout</Button></Link>
             </Box>
         </Stack>
      );
