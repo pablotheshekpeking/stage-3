@@ -8,8 +8,14 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 
 const No1 = () => {
   const [layout, setLayout] = useState([
-    { i: 'a', x: 0, y: 0, w: 2, h: 1 },
-    { i: 'b', x: 2, y: 0, w: 2, h: 1 },
+    { i: 'a', x: 0, y: 0, w: 1, h: 1 },
+    { i: 'b', x: 1, y: 0, w: 1, h: 1 },
+    { i: 'c', x: 2, y: 0, w: 1, h: 1 },
+    { i: 'd', x: 3, y: 0, w: 1, h: 1 },
+    { i: 'e', x: 0, y: 1, w: 1, h: 1 },
+    { i: 'f', x: 1, y: 1, w: 1, h: 1 },
+    { i: 'g', x: 2, y: 1, w: 1, h: 1 },
+    { i: 'h', x: 3, y: 1, w: 1, h: 1 },
   ]);
 
   const onLayoutChange = (newLayout) => {
@@ -22,12 +28,14 @@ const No1 = () => {
         className="layout"
         layout={layout}
         cols={4}
-        rowHeight={100}
-        width={800}
+        rowHeight={200} // Adjust the height as needed
+        width={'50%'}
         onLayoutChange={onLayoutChange}
       >
         <GalleryItem key="a" id="a" src="/assets/img1.png" />
         <GalleryItem key="b" id="b" src="/assets/img2.png" />
+        <GalleryItem key="c" id="c" src="/assets/img3.png" />
+        <GalleryItem key="d" id="d" src="/assets/img4.png" />
         {/* Add more images as needed */}
       </GridLayout>
     </DndProvider>
