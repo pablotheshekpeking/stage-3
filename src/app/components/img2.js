@@ -6,7 +6,7 @@ import GridLayout from 'react-grid-layout';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
-const No1 = () => {
+const No2 = () => {
     const [layout, setLayout] = useState([
         { i: 'a', x: 0, y: 0, w: 1, h: 1 },
         { i: 'b', x: 1, y: 0, w: 1, h: 1 },
@@ -67,4 +67,4 @@ const GalleryItem = ({ id, src }) => {
     );
 };
 
-export default No1;
+export default No2;
