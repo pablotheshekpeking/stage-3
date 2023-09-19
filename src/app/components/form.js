@@ -12,12 +12,12 @@ import {
   Heading,
   useColorModeValue,
 } from '@chakra-ui/react';
-import Link from 'next/link';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { signInWithEmailAndPasswordHandler } from '../firebaseAuth'; // Import the Firebase authentication function
 
 export default function Form() {
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
@@ -68,13 +68,13 @@ export default function Form() {
               />
             </FormControl>
             <Stack spacing={10}>
-              <Stack
+              {/**<Stack
                 direction={{ base: 'column', sm: 'row' }}
                 align={'start'}
                 justify={'space-between'}>
                 <Checkbox>Remember me</Checkbox>
-                {/* ... */}
-              </Stack>
+                {/* ... 
+              </Stack> */}
               <Button
                 onClick={handleSignIn} // Call the handleSignIn function when the button is clicked
                 bg={'blue.400'}
