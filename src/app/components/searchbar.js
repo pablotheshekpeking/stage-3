@@ -12,7 +12,7 @@ const SearchBar = ({ onSearch }) => {
 
     return (
         <div>
-            <Stack direction={'row'} m={'auto'}>
+            <Stack direction={'row'} m={'auto'} p={'20px'}>
                 <Box w={'80%'}>
                     <Input
                         type="text"
