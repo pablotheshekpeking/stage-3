@@ -92,7 +92,6 @@ export default function Form() {
         {error && (
           <Text color="red.500" fontSize="sm">
             {error}
-            Incorrect Credentials
           </Text>
         )}
       </Stack>
