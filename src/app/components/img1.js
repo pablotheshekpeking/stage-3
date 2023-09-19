@@ -22,6 +22,20 @@ const No1 = () => {
         setLayout(newLayout);
     };
 
+    const handleDrop = (draggedItem, targetItem) => {
+        const updatedLayout = layout.map((item) => {
+            if (item.i === draggedItem.id) {
+                return { ...item, x: targetItem.x, y: targetItem.y };
+            }
+            if (item.i === targetItem.id) {
+                return { ...item, x: draggedItem.x, y: draggedItem.y };
+            }
+            return item;
+        });
+
+        setLayout(updatedLayout);
+    };
+
     return (
         <DndProvider backend={HTML5Backend}>
             <GridLayout
@@ -32,20 +46,20 @@ const No1 = () => {
                 width={'25%'}
                 onLayoutChange={onLayoutChange}
             >
-                <GalleryItem key="a" id="a" src="/assets/img1.png" />
-                <GalleryItem key="b" id="b" src="/assets/img2.png" />
-                <GalleryItem key="c" id="c" src="/assets/img3.png" />
-                <GalleryItem key="d" id="d" src="/assets/img4.png" />
+                <GalleryItem key="a" id="a" src="/assets/img1.png" onDrop={handleDrop} />
+                <GalleryItem key="b" id="b" src="/assets/img2.png" onDrop={handleDrop} />
+                <GalleryItem key="c" id="c" src="/assets/img3.png" onDrop={handleDrop} />
+                <GalleryItem key="d" id="d" src="/assets/img4.png" onDrop={handleDrop} />
                 {/* Add more images as needed */}
             </GridLayout>
         </DndProvider>
     );
 };
 
-const GalleryItem = ({ id, src }) => {
+const GalleryItem = ({ id, src, onDrop }) => {
     const [{ isDragging }, ref] = useDrag(() => ({
         type: 'GALLERY_ITEM',
-        item: { id },
+        item: { id, x: 0, y: 0 },
         collect: (monitor) => ({
             isDragging: monitor.isDragging(),
         }),
@@ -53,18 +67,21 @@ const GalleryItem = ({ id, src }) => {
 
     const [, drop] = useDrop(() => ({
         accept: 'GALLERY_ITEM',
-        drop: () => ({ id }),
+        drop: (item) => {
+            onDrop(item, { id, x: 0, y: 0 });
+        },
     }));
 
     const opacity = isDragging ? 0.5 : 1;
 
     return (
         <div ref={(node) => ref(drop(node))} style={{ opacity }}>
-                <Box w="100%" h="auto">
-                    <Img src={src} w="100%" h="auto" p={'10px'} />
-                </Box>
+            <Box w="100%" h="auto">
+                <Img src={src} w="100%" h="auto" p={'10px'} />
+            </Box>
         </div>
     );
 };
 
 export default No1;
+
