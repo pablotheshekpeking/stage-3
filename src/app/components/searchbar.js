@@ -34,7 +34,7 @@ const Search = ({ onSearch }) => {
                 <Box w={['80%', '80%', '90%', '90%']}>
                     <Input
                         type="text"
-                        placeholder="Search for images..."
+                        placeholder="Search for images with title..."
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                     />
