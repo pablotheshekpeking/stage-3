@@ -1,32 +1,50 @@
 // SearchBar.js
 'use client'
+
+// components/Search.js
 import React, { useState } from 'react';
-import { Input, Button, Stack, Box } from '@chakra-ui/react';
+import axios from 'axios';
 
-const SearchBar = ({ onSearch }) => {
-    const [searchQuery, setSearchQuery] = useState('');
+const Search = ({ onSearch }) => {
+    const [query, setQuery] = useState('');
 
-    const handleSearch = () => {
-        onSearch(searchQuery);
+    const handleSearch = async () => {
+        try {
+            const response = await axios.get(
+                `https://api.themoviedb.org/3/search/movie`,
+                {
+                    params: {
+                        api_key: '259375f90a3851d4993f308d06743823',
+                        query,
+                    },
+                }
+            );
+
+            const movies = response.data.results;
+            onSearch(movies);
+        } catch (error) {
+            console.error('Error searching for images:', error);
+        }
     };
 
     return (
         <div>
             <Stack direction={'row'} m={'auto'} p={'20px'}>
                 <Box w={['80%', '80%', '90%', '90%']}>
-                    <Input
+                    <input
                         type="text"
-                        placeholder="Search by ID"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
+                        placeholder="Search for images..."
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
                     />
                 </Box>
                 <Box w={['20%', '20%', '10%', '10%']}>
-                    <Button onClick={handleSearch}>Search</Button>
+                    <button onClick={handleSearch}>Search</button>
                 </Box>
             </Stack>
         </div>
     );
 };
 
-export default SearchBar;
+export default Search;
+

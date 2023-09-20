@@ -4,7 +4,7 @@ import { CacheProvider } from '@chakra-ui/next-js';
 import { ChakraProvider } from '@chakra-ui/react';
 import { Stack, Box } from '@chakra-ui/react';
 import Navbar from '../components/navbar';
-import SearchBar from '../components/searchbar';
+import Search from '../components/searchbar';
 import MovieGrid from '../components/MovieGrid';
 
 export function Providers({ children }) {
@@ -12,7 +12,7 @@ export function Providers({ children }) {
     <CacheProvider>
       <ChakraProvider>
         <Navbar />
-        <SearchBar />
+        <Search />
         {/**<Stack direction={'row'} p={'20px'}>
           <Box w={'25%'}><No1 /></Box>
           <Box w={'25%'}><No2 /></Box>
