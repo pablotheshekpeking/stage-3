@@ -3,6 +3,7 @@
 
 // components/Search.js
 import React, { useState } from 'react';
+import { Stack, Box } from '@chakra-ui/react';
 import axios from 'axios';
 
 const Search = ({ onSearch }) => {
