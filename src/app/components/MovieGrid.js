@@ -74,6 +74,7 @@ const MovieGrid = () => {
           gap: "20px",
           minHeight: "100vh",
           overflowY: "auto",
+          padding: '20px',
         }}
       >
         {cardsData.map((movieData, index) => (
