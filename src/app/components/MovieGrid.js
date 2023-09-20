@@ -64,7 +64,7 @@ const MovieGrid = () => {
       ref={containerRef}
       style={{
         display: "grid",
-        gridTemplateColumns: "repeat(2, 1fr)",
+        gridTemplateColumns: "repeat(4, 1fr)",
         gap: "20px",
         minHeight: "100vh", // Ensure container takes up at least the full viewport height
         overflowY: "auto", // Enable vertical scrolling

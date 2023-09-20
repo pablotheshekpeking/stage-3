@@ -8,7 +8,7 @@ const Card = ({ movie }) => {
 
   return (
       <Box mb={'20px'} w={'full'} h={['200px', '200px', '400px', '400px']}>
-        <Img src={imageUrl} alt={movie.title} />
+        <Img src={imageUrl} alt={movie.title} mb={'20px'} />
       </Box>
   );
 }
