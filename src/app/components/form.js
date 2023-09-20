@@ -5,8 +5,9 @@ import {
   Box,
   FormControl,
   FormLabel,
+  Alert,
+  AlertIcon,
   Input,
-  Checkbox,
   Stack,
   Button,
   Heading,
@@ -68,13 +69,6 @@ export default function Form() {
               />
             </FormControl>
             <Stack spacing={10}>
-              {/**<Stack
-                direction={{ base: 'column', sm: 'row' }}
-                align={'start'}
-                justify={'space-between'}>
-                <Checkbox>Remember me</Checkbox>
-                {/* ... 
-              </Stack> */}
               <Button
                 onClick={handleSignIn} // Call the handleSignIn function when the button is clicked
                 bg={'blue.400'}
@@ -90,9 +84,10 @@ export default function Form() {
           </Stack>
         </Box>
         {error && (
-          <Text color="red.500" fontSize="sm">
+          <Alert status="error" mt={4}>
+            <AlertIcon />
             {error}
-          </Text>
+          </Alert>
         )}
       </Stack>
     </Flex>
