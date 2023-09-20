@@ -1,11 +1,14 @@
 import React, { useEffect, useState, useRef } from "react";
 import Card from "./card";
-import tmdbApi from "../api"; // Import the tmdbApi instance
+import tmdbApi from "../api";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import { ItemTypes } from "./ItemTypes"; // Import your item types
 
 const MovieGrid = () => {
   const [cardsData, setCardsData] = useState([]);
-  const [page, setPage] = useState(1); // Track the current page
-  const [loading, setLoading] = useState(false); // Track loading state
+  const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
   const containerRef = useRef(null);
 
   const fetchMovies = async () => {
@@ -21,7 +24,6 @@ const MovieGrid = () => {
 
       const newMovies = response.data.results;
 
-      // Append new movies to the existing data
       setCardsData((prevData) => [...prevData, ...newMovies]);
 
       setPage(page + 1);
@@ -32,7 +34,13 @@ const MovieGrid = () => {
     }
   };
 
-  // Load more movies when scrolling to the bottom of the container
+  const moveCard = (fromIndex, toIndex) => {
+    const updatedCardsData = [...cardsData];
+    const [movedCard] = updatedCardsData.splice(fromIndex, 1);
+    updatedCardsData.splice(toIndex, 0, movedCard);
+    setCardsData(updatedCardsData);
+  };
+
   const handleScroll = () => {
     const container = containerRef.current;
     if (container) {
@@ -46,36 +54,40 @@ const MovieGrid = () => {
   };
 
   useEffect(() => {
-    // Initial fetch
     fetchMovies();
 
-    // Attach scroll event listener
     const container = containerRef.current;
     container.addEventListener("scroll", handleScroll);
 
     return () => {
-      // Remove the scroll event listener when unmounting
       container.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <div
-      ref={containerRef}
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(4, 1fr)",
-        gap: "20px",
-        minHeight: "100vh", // Ensure container takes up at least the full viewport height
-        overflowY: "auto", // Enable vertical scrolling
-      }}
-    >
-      {cardsData.map((movieData) => (
-        <Card key={movieData.id} movie={movieData} />
-      ))}
+    <DndProvider backend={HTML5Backend}>
+      <div
+        ref={containerRef}
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)",
+          gap: "20px",
+          minHeight: "100vh",
+          overflowY: "auto",
+        }}
+      >
+        {cardsData.map((movieData, index) => (
+          <Card
+            key={movieData.id}
+            movie={movieData}
+            index={index}
+            moveCard={moveCard}
+          />
+        ))}
 
-      {loading && <p>Loading...</p>}
-    </div>
+        {loading && <p>Loading...</p>}
+      </div>
+    </DndProvider>
   );
 };
 
