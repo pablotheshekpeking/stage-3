@@ -7,7 +7,7 @@ const Card = ({ movie }) => {
   const imageUrl = `https://image.tmdb.org/t/p/original${movie.poster_path}`;
 
   return (
-      <Box mb={'20px'} w={'full'} h={['200px', '200px', '400px', '400px']}>
+      <Box w={'full'} h={['200px', '200px', '400px', '400px']}>
         <Img src={imageUrl} alt={movie.title} mb={'20px'} />
       </Box>
   );
