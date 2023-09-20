@@ -29,7 +29,7 @@ export default function Form() {
       console.log('Signed in successfully:', user);
       router.push('../gallery');
     } catch (error) {
-      setError(error.message);
+      setError('Invalid email or password. Please try again.');
     }
   };
 
