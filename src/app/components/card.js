@@ -6,6 +6,7 @@ import { useDrag, useDrop } from "react-dnd";
 import { ItemTypes } from "./ItemTypes"; // Define your drag-and-drop item types
 
 const Card = ({ movie, index, moveCard }) => {
+  const imageUrl = `https://image.tmdb.org/t/p/original${movie.poster_path}`;
   const [, ref] = useDrag({
     type: ItemTypes.CARD,
     item: { index },
