@@ -1,6 +1,7 @@
 'use client'
 
 import React from "react";
+import { Box } from '@chakra-ui/react';
 import { useDrag, useDrop } from "react-dnd";
 import { ItemTypes } from "./ItemTypes"; // Define your drag-and-drop item types
 
