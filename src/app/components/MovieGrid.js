@@ -5,8 +5,11 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { ItemTypes } from "./ItemTypes"; // Import your item types
 
-const MovieGrid = () => {
-  const [cardsData, setCardsData] = useState([]);
+const MovieGrid = ({ initialMovies }) => {
+  const [cardsData, setCardsData] = useState(initialMovies);
+  useEffect(() => {
+    setCardsData(initialMovies);
+  }, [initialMovies]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const containerRef = useRef(null);
