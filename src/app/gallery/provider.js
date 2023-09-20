@@ -9,6 +9,7 @@ import No2 from '../components/img2';
 import No3 from '../components/img3';
 import No4 from '../components/img4';
 import SearchBar from '../components/searchbar';
+import MovieGrid from '../components/MovieGrid';
 
 export function Providers({ children }) {
   return (
@@ -16,12 +17,13 @@ export function Providers({ children }) {
       <ChakraProvider>
         <Navbar />
         <SearchBar />
-        <Stack direction={'row'} p={'20px'}>
+        {/**<Stack direction={'row'} p={'20px'}>
           <Box w={'25%'}><No1 /></Box>
           <Box w={'25%'}><No2 /></Box>
           <Box w={'25%'}><No3 /></Box>
           <Box w={'25%'}><No4 /></Box>
-        </Stack>
+          </Stack>*/}
+          <MovieGrid />
       </ChakraProvider>
     </CacheProvider>
   );
