@@ -3,7 +3,6 @@
 import React from "react";
 import { Box, Img } from "@chakra-ui/react";
 import { useDrag, useDrop } from "react-dnd";
-import tmdbApi from "../api";
 import { ItemTypes } from "./ItemTypes"; // Define your drag-and-drop item types
 
 const Card = ({ photo, index, moveCard }) => {

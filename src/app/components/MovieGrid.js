@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import Card from "./card";
-import tmdbApi from "../api"; // Import your Unsplash API instance
+import unsplashApi from "../api"; // Import your Unsplash API instance
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { ItemTypes } from "./ItemTypes"; // Import your item types
@@ -18,7 +18,7 @@ const MovieGrid = ({ initialMovies }) => {
     try {
       setLoading(true);
 
-      const response = await tmdbApi.get("/photos", {
+      const response = await unsplashApi.get("/photos", {
         params: {
           page,
           per_page: 30, // Adjust the number of images per page as needed
