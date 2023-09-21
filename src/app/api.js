@@ -6,7 +6,7 @@ const apiKey = '6rgrQws5g38YYhiB5AXFhhSXKCaUM-N_sl-T7Mpt2_4'; // Replace with yo
 const unsplashApi = axios.create({
   baseURL: 'https://api.unsplash.com',
   headers: {
-    Authorization: `Client-ID ${apiKey}`,
+    Authorization: `Client-ID 6rgrQws5g38YYhiB5AXFhhSXKCaUM-N_sl-T7Mpt2_4`,
   },
 });
 
