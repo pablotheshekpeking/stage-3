@@ -1,12 +1,12 @@
 'use client'
 
 import React from "react";
-import { Box, Img } from '@chakra-ui/react';
+import { Box, Img } from "@chakra-ui/react";
 import { useDrag, useDrop } from "react-dnd";
 import { ItemTypes } from "./ItemTypes"; // Define your drag-and-drop item types
 
 const Card = ({ photo, index, moveCard }) => {
-  const imageUrl =  'https://api.pexels.com/v1/photos/'; // Use the appropriate Pexels API property for the image URL
+  const imageUrl = "https://api.unsplash.com/photos?page=1"; // Use the appropriate Unsplash API property for the image URL
 
   const [, ref] = useDrag({
     type: ItemTypes.CARD,
@@ -25,14 +25,15 @@ const Card = ({ photo, index, moveCard }) => {
 
   return (
     <div ref={(node) => ref(drop(node))}>
-      <Box w={'full'} h={['200px', '200px', '400px', '400px']}>
-        <Img src={imageUrl} alt={photo.photographer} mb={'20px'} />
+      <Box w={"full"} h={["200px", "200px", "400px", "400px"]}>
+        <Img src={imageUrl} alt={photo.photographer} mb={"20px"} />
       </Box>
     </div>
   );
 };
 
 export default Card;
+
 
 
 

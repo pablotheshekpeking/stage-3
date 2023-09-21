@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import Card from "./card";
-import tmdbApi from "../api"; // Import your Pexels API instance
+import tmdbApi from "../api"; // Import your Unsplash API instance
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { ItemTypes } from "./ItemTypes"; // Import your item types
@@ -18,14 +18,14 @@ const MovieGrid = ({ initialMovies }) => {
     try {
       setLoading(true);
 
-      const response = await tmdbApi.get("/v1/curated", {
+      const response = await tmdbApi.get("/photos", {
         params: {
           page,
-          per_page: 10, // Adjust the number of images per page as needed
+          per_page: 30, // Adjust the number of images per page as needed
         },
       });
 
-      const newImages = response.data.photos;
+      const newImages = response.data;
 
       setCardsData((prevData) => [...prevData, ...newImages]);
 
