@@ -18,7 +18,7 @@ const MovieGrid = ({ initialMovies }) => {
     try {
       setLoading(true);
 
-      const response = await unsplashApi.get("/photos", {
+      const response = await unsplashApi.get("search/photos?query=nature", {
         params: {
           page,
           per_page: 30, // Adjust the number of images per page as needed
