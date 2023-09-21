@@ -6,7 +6,7 @@ import { useDrag, useDrop } from "react-dnd";
 import { ItemTypes } from "./ItemTypes"; // Define your drag-and-drop item types
 
 const Card = ({ photo, index, moveCard }) => {
-  const imageUrl = "https://api.unsplash.com"; // Use the appropriate Unsplash API property for the image URL
+  const imageUrl = "https://api.unsplash.com/search"; // Use the appropriate Unsplash API property for the image URL
 
   const [, ref] = useDrag({
     type: ItemTypes.CARD,
