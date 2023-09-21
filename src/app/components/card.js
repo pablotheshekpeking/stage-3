@@ -3,10 +3,11 @@
 import React from "react";
 import { Box, Img } from "@chakra-ui/react";
 import { useDrag, useDrop } from "react-dnd";
+import tmdbApi from "../api";
 import { ItemTypes } from "./ItemTypes"; // Define your drag-and-drop item types
 
 const Card = ({ photo, index, moveCard }) => {
-  const imageUrl = "https://api.unsplash.com"; // Use the appropriate Unsplash API property for the image URL
+  const imageUrl = "https://api.unsplash.com/search/photos"; // Use the appropriate Unsplash API property for the image URL
 
   const [, ref] = useDrag({
     type: ItemTypes.CARD,
