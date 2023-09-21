@@ -6,7 +6,7 @@ import { useDrag, useDrop } from "react-dnd";
 import { ItemTypes } from "./ItemTypes"; // Define your drag-and-drop item types
 
 const Card = ({ photo, index, moveCard }) => {
-  const imageUrl = photo.src.large; // Use the appropriate Pexels API property for the image URL
+  const imageUrl =  'https://api.pexels.com/v1/photos/'; // Use the appropriate Pexels API property for the image URL
 
   const [, ref] = useDrag({
     type: ItemTypes.CARD,
