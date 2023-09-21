@@ -1,13 +1,14 @@
 // api.js
 import axios from 'axios';
 
-const apiKey = '259375f90a3851d4993f308d06743823';
+const apiKey = 'e1C0H6D1KujiVMLXh5pgrASQYXtUfFDBmXsp0pNrV4SS38ud5z5buZfG'; // Replace with your Pexels API key
 
-const tmdbApi = axios.create({
-  baseURL: 'https://api.themoviedb.org/3',
-  params: {
-    api_key: apiKey,
+const pexelsApi = axios.create({
+  baseURL: 'https://api.pexels.com',
+  headers: {
+    Authorization: `Bearer ${apiKey}`,
   },
 });
 
-export default tmdbApi;
+export default pexelsApi;
+
