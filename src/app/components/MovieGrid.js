@@ -25,7 +25,7 @@ const MovieGrid = ({ initialMovies }) => {
         },
       });
 
-      const newImages = response.data;
+      const newImages = response.data.results;
 
       setCardsData((prevData) => [...prevData, ...newImages]);
 
