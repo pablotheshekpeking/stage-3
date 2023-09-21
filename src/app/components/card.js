@@ -5,8 +5,9 @@ import { Box, Img } from '@chakra-ui/react';
 import { useDrag, useDrop } from "react-dnd";
 import { ItemTypes } from "./ItemTypes"; // Define your drag-and-drop item types
 
-const Card = ({ movie, index, moveCard }) => {
-  const imageUrl = `https://image.tmdb.org/t/p/original${movie.poster_path}`;
+const Card = ({ photo, index, moveCard }) => {
+  const imageUrl = photo.src.large; // Use the appropriate Pexels API property for the image URL
+
   const [, ref] = useDrag({
     type: ItemTypes.CARD,
     item: { index },
@@ -25,12 +26,13 @@ const Card = ({ movie, index, moveCard }) => {
   return (
     <div ref={(node) => ref(drop(node))}>
       <Box w={'full'} h={['200px', '200px', '400px', '400px']}>
-        <Img src={imageUrl} alt={movie.title} mb={'20px'} />
+        <Img src={imageUrl} alt={photo.photographer} mb={'20px'} />
       </Box>
     </div>
   );
 };
 
 export default Card;
+
 
 

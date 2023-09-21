@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import Card from "./card";
-import tmdbApi from "../api";
+import tmdbApi from "../api"; // Import your Pexels API instance
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { ItemTypes } from "./ItemTypes"; // Import your item types
@@ -18,20 +18,20 @@ const MovieGrid = ({ initialMovies }) => {
     try {
       setLoading(true);
 
-      const response = await tmdbApi.get("/movie/top_rated", {
+      const response = await tmdbApi.get("/v1/curated", {
         params: {
           page,
-          language: "en-US",
+          per_page: 10, // Adjust the number of images per page as needed
         },
       });
 
-      const newMovies = response.data.results;
+      const newImages = response.data.photos;
 
-      setCardsData((prevData) => [...prevData, ...newMovies]);
+      setCardsData((prevData) => [...prevData, ...newImages]);
 
       setPage(page + 1);
     } catch (error) {
-      console.error("Error fetching movies:", error);
+      console.error("Error fetching images:", error);
     } finally {
       setLoading(false);
     }
@@ -80,10 +80,10 @@ const MovieGrid = ({ initialMovies }) => {
           padding: '20px',
         }}
       >
-        {cardsData.map((movieData, index) => (
+        {cardsData.map((imageData, index) => (
           <Card
-            key={movieData.id}
-            movie={movieData}
+            key={imageData.id}
+            photo={imageData}
             index={index}
             moveCard={moveCard}
           />
