@@ -18,7 +18,7 @@ const MovieGrid = ({ initialMovies }) => {
     try {
       setLoading(true);
 
-      const response = await pexelsApi.get("/search?query=nature", {
+      const response = await pexelsApi.get("/curated", {
         params: {
           page,
           per_page: 30, // Adjust the number of images per page as needed
