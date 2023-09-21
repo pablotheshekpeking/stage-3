@@ -26,7 +26,7 @@ const Card = ({ photo, index, moveCard }) => {
   return (
     <div ref={(node) => ref(drop(node))}>
       <Box w={"full"} h={["200px", "200px", "400px", "400px"]}>
-        <Img src={imageUrl} alt={photo.photographer} mb={"20px"} />
+        <Img src={photo.imageUrl} alt={photo.photographer} mb={"20px"} />
       </Box>
     </div>
   );
