@@ -1,13 +1,14 @@
 // api.js
 import axios from 'axios';
 
-const apiKey = '6rgrQws5g38YYhiB5AXFhhSXKCaUM-N_sl-T7Mpt2_4'; // Replace with your Unsplash API key
+const apiKey = 'e1C0H6D1KujiVMLXh5pgrASQYXtUfFDBmXsp0pNrV4SS38ud5z5buZfG'; // Replace with your Pexels API key
 
-const unsplashApi = axios.create({
-  baseURL: 'https://api.unsplash.com/search/photos?query=nature',
+const pexelsApi = axios.create({
+  baseURL: 'https://api.pexels.com/v1',
   headers: {
-    Authorization: `Client-ID ${apiKey}`,
+    Authorization: apiKey,
   },
 });
 
-export default unsplashApi;
+export default pexelsApi;
+

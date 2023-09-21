@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import Card from "./card";
-import unsplashApi from "../api"; // Import your Unsplash API instance
+import pexelsApi from "../api"; // Import your Pexels API instance
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { ItemTypes } from "./ItemTypes"; // Import your item types
@@ -18,14 +18,14 @@ const MovieGrid = ({ initialMovies }) => {
     try {
       setLoading(true);
 
-      const response = await unsplashApi.get("search/photos?query=nature", {
+      const response = await pexelsApi.get("/search?query=nature", {
         params: {
           page,
           per_page: 30, // Adjust the number of images per page as needed
         },
       });
 
-      const newImages = response.data.results;
+      const newImages = response.data.photos;
 
       setCardsData((prevData) => [...prevData, ...newImages]);
 
