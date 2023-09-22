@@ -6,7 +6,7 @@ import { useDrag, useDrop } from "react-dnd";
 import { ItemTypes } from "./ItemTypes"; // Define your drag-and-drop item types
 
 const Card = ({ photo, index, moveCard }) => {
-  const img = 'https://api.pexels.com'; // Assuming 'photo' object contains the image source URL
+   // Assuming 'photo' object contains the image source URL
 
   const [, ref] = useDrag({
     type: ItemTypes.CARD,
@@ -26,7 +26,7 @@ const Card = ({ photo, index, moveCard }) => {
   return (
     <div ref={(node) => ref(drop(node))}>
       <Box w={"full"} h={["200px", "200px", "400px", "400px"]}>
-        <Img src={img} alt={photo.photographer} mb={"20px"} />
+        <Img src={'https://api.pexels.com/v1/curated?per_page=1'} alt={photo.photographer} mb={"20px"} />
       </Box>
     </div>
   );
