@@ -6,7 +6,7 @@ const apiUrl = 'https://cors-anywhere.herokuapp.com/https://api.pexels.com/v1/cu
 
 
 const pexelsApi = axios.create({
-  baseURL: 'https://api.pexels.com/v1/curated?per_page=1',
+  baseURL: 'https://api.pexels.com',
   headers: {
     Authorization: `Bearer ${apiKey}`,
   },
