@@ -26,7 +26,7 @@ const Card = ({ photo, index, moveCard }) => {
   return (
     <div ref={(node) => ref(drop(node))}>
       <Box w={"full"} h={["200px", "200px", "400px", "400px"]}>
-        <Img src={'https://api.pexels.com/v1/curated?per_page=1'} alt={photo.photographer} mb={"20px"} />
+        <Img src={'https://api.pexels.com'} alt={photo.photographer} mb={"20px"} />
       </Box>
     </div>
   );
