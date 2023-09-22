@@ -18,7 +18,7 @@ const MovieGrid = ({ initialMovies }) => {
     try {
       setLoading(true);
 
-      const response = await pexelsApi.get("", {
+      const response = await pexelsApi.get("/v1/curated", {
         params: {
           page,
           per_page: 30, // Adjust the number of images per page as needed
